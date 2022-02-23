@@ -1,0 +1,43 @@
+---
+title: "Jail pt 3"
+output: html_document
+---
+
+```{r echo=FALSE}
+source("../source/analysis.R")
+
+```
+
+## Introduction
+
+The data set that I analyzed holds information about inmate population among different prisons in the USA since 1970. This data set explores the different populations of different prisons, such as the inmate population of different ethnicity, the population of inmates by gender, the number of juveniles in jail, the capacity of each prison, as well as the admissions and discharges from jails. From this data, the five variables that I found to be interesting are: the ratio of black to white inmates, the difference in inmates in the most populous prison in 1970 compared to 2018 (the most recent year in the data set.), the state with the most inmates, the average size of the prisons, and which prison had the most population over the span of 48 years, included in the data set.
+
+## Variables
+
+The first variable that I found was the ratio of white to black inmates of all years combined since 1970, which was 5.37 white inmates to 1 black inmate. The state with the highest number of inmates over the years was California. The third variable that I found was the mean size of all the prisons that were recorded in the data set, the mean land area of all prisons is 1340.69. The forth variable that I found was the difference in population between the most populous prison in 2018 compared to 1970, which was 2,208,470. The fifth variable that I found was the prison that had to most population through the years, which was Los Angeles county with 431,662,419 inmates over the span of 48 years.
+
+```{r}
+raceRatio
+byState
+meanSize
+popDiff
+mostIncarcerations
+```
+
+## Visualization 1
+
+```{r}
+LAoverTime
+```
+
+This graph shows the population of the inmates in Los Angeles County and counties that are close (fips) to it. The graph will show that the number of inmates in Los Angeles has been increasing ever since 1970 and the population of Los Angeles County are so much higher than the other counties.
+
+## Two Variable Chart
+
+```{r}
+NYPlot
+```
+
+This graph shows the total population of New York county jail by race since 1990. This graph will show us that the highest race in jail in New York County was white, followed by Latin, then Black. This means that since 1990 the race that was in jail most in New York was White.
+
+## Map
