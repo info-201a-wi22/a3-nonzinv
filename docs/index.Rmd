@@ -3,7 +3,7 @@ title: "Jail pt 3"
 output: html_document
 ---
 
-```{r echo=FALSE}
+```{r}
 source("../source/analysis.R")
 
 ```
@@ -30,7 +30,7 @@ mostIncarcerations
 LAoverTime
 ```
 
-This graph shows the population of the inmates in Los Angeles County and counties that are close (fips) to it. The graph will show that the number of inmates in Los Angeles has been increasing ever since 1970 and the population of Los Angeles County are so much higher than the other counties.
+The graph has been included because LA is one of the busiest and eventful counties in the US, so I wanted to see the demographics of the jail population over the years. This graph shows the population of the inmates in Los Angeles County and counties that are close (fips) to it. The graph will show that the number of inmates in Los Angeles has been increasing ever since 1970 and the population of Los Angeles County are so much higher than the other counties.
 
 ## Two Variable Chart
 
@@ -41,3 +41,9 @@ NYPlot
 This graph shows the total population of New York county jail by race since 1990. This graph will show us that the highest race in jail in New York County was white, followed by Latin, then Black. This means that since 1990 the race that was in jail most in New York was White.
 
 ## Map
+
+```{r}
+washington
+```
+
+I decided to include this map because it shows me the demographics of the population of the jails in Washington, since it's very close to us and it's something that we should know since it's close to us. The patterns that emerged from this is that King County had the most inmates in 2018, which is also very close to us in the University of Washington. Apart from that, the main things that are apparent here is overall, Washington doesn't have a lot of inmates, apart from King County.

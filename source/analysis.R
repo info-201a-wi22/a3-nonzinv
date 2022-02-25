@@ -2,6 +2,10 @@ incarcerations <- read.csv("https://raw.githubusercontent.com/vera-institute/inc
 library(dplyr)
 library(ggplot2)
 library(reshape2)
+library(ggspatial)
+library(sf)
+library(tidyverse)
+
 options(scipen = 999)
 
 raceRatio <- incarcerations %>%
@@ -62,3 +66,21 @@ NYRace <- NYGraph %>%
 
 NYPlot <- ggplot(NYRace, aes(x = variable, y = population)) + geom_bar(stat = "identity") + labs(x = "Race", y = "Population", title = "Population of NY county jail from 1990 by Race")
 
+wa_map <- map_data("county", "washington")
+
+wa_data <- incarcerations %>%
+  filter(state == "WA") %>%
+  filter(year == "2018") %>%
+  mutate(county_name = str_remove_all(county_name, " County")) %>%
+  mutate(subregion = tolower(county_name)) %>%
+  select(subregion, total_pop, total_pop_15to64)
+
+wash <- merge(wa_map, wa_data)
+
+washington <- ggplot(data = wash, mapping = aes(x = long, y = lat, group = group, fill = total_pop)) + geom_polygon(colour = "white") +
+  labs(title = "Population of Washington Jails in 2018", x = "longitude", y = "latitude") + scale_fill_gradient(low = "grey", high = "black")
+
+
+
+                      
+                      
